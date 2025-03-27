@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="var" path="M2_REPO/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="M2_REPO/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-api/2.17.0/log4j-api-2.17.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mapstruct/mapstruct/1.5.2.Final/mapstruct-1.5.2.Final.jar"/>
+	<classpathentry kind="src" path="backend/src/main/java"/>
+	<classpathentry kind="src" path="backend/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
