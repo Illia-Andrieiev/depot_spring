@@ -1,7 +1,9 @@
+package com.Illia.config;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
+//import java.util.Properties;
 
 public class DatabaseConfig {
     private static final String URL = "jdbc:postgresql://localhost:5432/mydb";
