@@ -15,12 +15,10 @@ import java.io.UnsupportedEncodingException;
  * per domain and application to minimize unnecessary resource usage.
  */
 public class AuthenticationControllerProvider {
-
     private AuthenticationControllerProvider() {}
 
     private static AuthenticationController INSTANCE;
 
-    // if multiple threads may call this, synchronize this method and consider double locking
     public static AuthenticationController getInstance(ServletConfig config) throws UnsupportedEncodingException {
         if (INSTANCE == null) {
             String domain = config.getServletContext().getInitParameter("com.auth0.domain");

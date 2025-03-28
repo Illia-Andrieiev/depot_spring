@@ -1,7 +1,6 @@
 com\Illia\controller\LogoutServlet.class
 com\Illia\filters\Auth0Filter.class
 com\Illia\config\DatabaseConfig.class
-com\Illia\filters\AuthFilter.class
 com\Illia\controller\HomeServlet.class
 com\Illia\controller\LoginServlet.class
 com\Illia\controller\CallbackServlet.class

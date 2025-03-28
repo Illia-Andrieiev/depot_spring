@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Filter class to check if a valid session exists. This will be true if the User Id is present.
  */
-@WebFilter(urlPatterns = "/portal/*")
+@WebFilter(urlPatterns = "/index.jsp")
 public class Auth0Filter implements Filter {
 
     @Override
@@ -31,8 +31,12 @@ public class Auth0Filter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         String accessToken = (String) SessionUtils.get(req, "accessToken");
         String idToken = (String) SessionUtils.get(req, "idToken");
+        System.out.println("Auth0Filter is running...");
+        System.out.println(accessToken);
+        System.out.println(idToken);
         if (accessToken == null && idToken == null) {
-            res.sendRedirect("/login");
+            System.out.println("Redirecting to login");
+            res.sendRedirect(req.getContextPath() + "/login");
             return;
         }
         next.doFilter(request, response);

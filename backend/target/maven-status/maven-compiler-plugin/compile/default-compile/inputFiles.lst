@@ -6,5 +6,4 @@ D:\programing\oop_lab1\backend\src\main\java\com\Illia\controller\LoginServlet.j
 D:\programing\oop_lab1\backend\src\main\java\com\Illia\controller\LogoutServlet.java
 D:\programing\oop_lab1\backend\src\main\java\com\Illia\dto\UserDTO.java
 D:\programing\oop_lab1\backend\src\main\java\com\Illia\filters\Auth0Filter.java
-D:\programing\oop_lab1\backend\src\main\java\com\Illia\filters\AuthFilter.java
 D:\programing\oop_lab1\backend\src\main\java\com\Illia\service\UserService.java

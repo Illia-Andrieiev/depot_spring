@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-@WebServlet(urlPatterns = {"/login"})
+//@WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
 
     private AuthenticationController authenticationController;
@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         domain = config.getServletContext().getInitParameter("com.auth0.domain");
+        System.out.println("LoginServlet initialized");
         try {
             authenticationController = AuthenticationControllerProvider.getInstance(config);
         } catch (UnsupportedEncodingException e) {
