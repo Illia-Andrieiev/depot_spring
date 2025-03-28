@@ -6,9 +6,70 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-  <display-name>Archetype Created Web Application</display-name>
 
-  <welcome-file-list>
-      <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+    <display-name>Auth0 Web Application</display-name>
+
+    <!-- Указываем стартовую страницу -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Параметры Auth0 для аутентификации -->
+    <context-param>
+        <param-name>com.auth0.domain</param-name>
+        <param-value>dev-j28fczur53zlmkj8.us.auth0.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.auth0.clientId</param-name>
+        <param-value>S17XOw90QEFbsQ3OnSMOM5vrs8dsw82P</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.auth0.clientSecret</param-name>
+        <param-value>Bw8wpzScBojYKa1pSVT6NmWYZTtH_bIZp0Jgty_B9oOWYFE1RrY8pIo2t4PVF1c8</param-value>
+    </context-param>
+
+    <!-- Фильтр аутентификации -->
+    <!--
+    <filter>
+        <filter-name>Auth0Filter</filter-name>
+        <filter-class>com.Illia.filter.Auth0Filter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Auth0Filter</filter-name>
+        <url-pattern>/portal/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.Illia.controller.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.Illia.controller.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CallbackServlet</servlet-name>
+        <servlet-class>com.Illia.controller.CallbackServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CallbackServlet</servlet-name>
+        <url-pattern>/callback</url-pattern>
+    </servlet-mapping>
+-->
 </web-app>

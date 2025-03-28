@@ -17,9 +17,10 @@ public class AuthFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         String authHeader = req.getHeader("Authorization");
-
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            ((HttpServletResponse) response).sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            ((HttpServletResponse) response).setContentType("text/plain");
+            ((HttpServletResponse) response).getWriter().write("Authorization Header: " + authHeader);
+
             return;
         }
 
