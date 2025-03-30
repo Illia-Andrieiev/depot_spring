@@ -5,7 +5,6 @@ import com.auth0.AuthenticationController;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,7 +35,8 @@ public class LoginServlet extends HttpServlet {
         if ((req.getScheme().equals("http") && req.getServerPort() != 80) || (req.getScheme().equals("https") && req.getServerPort() != 443)) {
             redirectUri += ":" + req.getServerPort();
         }
-        redirectUri += "/callback";
+        redirectUri += "/backend/callback";
+        System.out.println("Redirect URI: " + redirectUri);
 
         String authorizeUrl = authenticationController.buildAuthorizeUrl(req, res, redirectUri)
                 .build();

@@ -51,6 +51,15 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <servlet-name>CallbackServlet</servlet-name>
+        <servlet-class>com.Illia.controller.CallbackServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CallbackServlet</servlet-name>
+        <url-pattern>/callback</url-pattern>
+    </servlet-mapping>
     <!--
 
 
@@ -64,14 +73,6 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>CallbackServlet</servlet-name>
-        <servlet-class>com.Illia.controller.CallbackServlet</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>CallbackServlet</servlet-name>
-        <url-pattern>/callback</url-pattern>
-    </servlet-mapping>
 -->
 </web-app>

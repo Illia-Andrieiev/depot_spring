@@ -19,7 +19,6 @@ import java.io.UnsupportedEncodingException;
  * The Servlet endpoint used as the callback handler in the OAuth 2.0 authorization code grant flow.
  * It will be called with the authorization code after a successful login.
  */
-@WebServlet(urlPatterns = {"/callback"})
 public class CallbackServlet extends HttpServlet {
 
     private String redirectOnSuccess;
@@ -45,9 +44,9 @@ public class CallbackServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        redirectOnSuccess = "/portal/home";
-        redirectOnFail = "/login";
-
+        redirectOnSuccess = "/backend/portal/home";
+        redirectOnFail = "/backend/login";
+        System.out.println("CallBack Servlet");
         try {
             authenticationController = AuthenticationControllerProvider.getInstance(config);
         } catch (UnsupportedEncodingException e) {
