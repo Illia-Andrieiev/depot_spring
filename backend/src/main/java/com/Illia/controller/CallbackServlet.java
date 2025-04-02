@@ -5,10 +5,11 @@ import com.auth0.AuthenticationController;
 import com.auth0.IdentityVerificationException;
 import com.auth0.SessionUtils;
 import com.auth0.Tokens;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -81,17 +82,23 @@ public class CallbackServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         handle(req, res);
     }
-
     private void handle(HttpServletRequest req, HttpServletResponse res) throws IOException {
         try {
             Tokens tokens = authenticationController.handle(req, res);
+            String idToken = tokens.getIdToken();
+    
+            // Декодируем JWT, чтобы извлечь email
+            DecodedJWT jwt = JWT.decode(idToken);
+            String userEmail = jwt.getClaim("email").asString();
+    
             SessionUtils.set(req, "accessToken", tokens.getAccessToken());
-            SessionUtils.set(req, "idToken", tokens.getIdToken());
-            res.sendRedirect(redirectOnSuccess);
+            SessionUtils.set(req, "idToken", idToken);
+    
+            res.sendRedirect("http://localhost:3000?user=" + userEmail); 
         } catch (IdentityVerificationException e) {
             e.printStackTrace();
             res.sendRedirect(redirectOnFail);
         }
     }
-
+    
 }

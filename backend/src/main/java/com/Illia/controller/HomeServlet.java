@@ -3,7 +3,6 @@ package com.Illia.controller;
 import com.auth0.SessionUtils;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +19,7 @@ public class HomeServlet extends HttpServlet {
         } else if (idToken != null) {
             req.setAttribute("userId", idToken);
         }
-        req.getRequestDispatcher("/WEB-INF/jsp/home.jsp").forward(req, res);
+        res.sendRedirect("http://localhost:3000");
     }
 }
+

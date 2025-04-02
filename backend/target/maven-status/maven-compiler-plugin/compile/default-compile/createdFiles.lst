@@ -4,6 +4,7 @@ com\Illia\config\DatabaseConfig.class
 com\Illia\controller\HomeServlet.class
 com\Illia\controller\LoginServlet.class
 com\Illia\controller\CallbackServlet.class
+com\Illia\service\DatabaseTableHandler.class
 com\Illia\dto\UserDTO.class
 com\Illia\service\UserService.class
 com\Illia\config\AuthenticationControllerProvider.class

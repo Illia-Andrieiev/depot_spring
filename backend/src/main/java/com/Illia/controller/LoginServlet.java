@@ -39,7 +39,8 @@ public class LoginServlet extends HttpServlet {
         System.out.println("Redirect URI: " + redirectUri);
 
         String authorizeUrl = authenticationController.buildAuthorizeUrl(req, res, redirectUri)
-                .build();
+            .withScope("openid email")
+            .build();
         res.sendRedirect(authorizeUrl);
     }
 
