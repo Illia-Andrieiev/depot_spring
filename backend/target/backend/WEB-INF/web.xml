@@ -42,14 +42,63 @@
         <url-pattern>/index.jsp</url-pattern>
         <!--<url-pattern></url-pattern>-->
     </filter-mapping>
-        <servlet>
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>com.Illia.filters.CorsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
+
+
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.Illia.controller.LoginServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ProfileController</servlet-name>
+        <servlet-class>com.Illia.controller.ProfileController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileController</servlet-name>
+        <url-pattern>/api/profile</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>QueryController</servlet-name>
+        <servlet-class>com.Illia.controller.QueryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryController</servlet-name>
+        <url-pattern>/api/query</url-pattern>
+    </servlet-mapping>
+      <servlet>
+        <servlet-name>DispatcherController</servlet-name>
+        <servlet-class>com.Illia.controller.DispatcherController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherController</servlet-name>
+        <url-pattern>/api/dispatcher</url-pattern>
+    </servlet-mapping>
+      <servlet>
+        <servlet-name>DriverCarController</servlet-name>
+        <servlet-class>com.Illia.controller.DriverCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DriverCarController</servlet-name>
+        <url-pattern>/api/driver</url-pattern>
+    </servlet-mapping>
+      <servlet>
+        <servlet-name>TripController</servlet-name>
+        <servlet-class>com.Illia.controller.TripController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TripController</servlet-name>
+        <url-pattern>/api/trip</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>CallbackServlet</servlet-name>
@@ -60,6 +109,16 @@
         <servlet-name>CallbackServlet</servlet-name>
         <url-pattern>/callback</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DriverAssignController</servlet-name>
+        <servlet-class>com.Illia.controller.DriverAssignController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DriverAssignController</servlet-name>
+        <url-pattern>/api/query/driver</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.Illia.controller.LogoutServlet</servlet-class>
@@ -80,3 +139,5 @@
     </servlet-mapping>
 
 </web-app>
+
+

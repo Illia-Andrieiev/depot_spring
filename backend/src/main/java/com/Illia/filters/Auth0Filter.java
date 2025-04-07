@@ -1,6 +1,5 @@
 package com.Illia.filters;
 
-import com.Illia.service.DatabaseTableHandler;
 import com.auth0.SessionUtils;
 
 import javax.servlet.*;
@@ -14,7 +13,6 @@ import java.io.IOException;
  */
 @WebFilter(urlPatterns = "/index.jsp")
 public class Auth0Filter implements Filter {
-    private final DatabaseTableHandler tableHandler = new DatabaseTableHandler();
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -36,8 +34,6 @@ public class Auth0Filter implements Filter {
             res.sendRedirect(req.getContextPath() + "/login");
             return;
         }
-
-        tableHandler.processRequest(req);
 
         next.doFilter(request, response);
     }

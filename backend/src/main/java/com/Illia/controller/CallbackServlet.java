@@ -22,7 +22,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class CallbackServlet extends HttpServlet {
 
-    private String redirectOnSuccess;
+   // private String redirectOnSuccess;
     private String redirectOnFail;
     private AuthenticationController authenticationController;
 
@@ -45,7 +45,7 @@ public class CallbackServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        redirectOnSuccess = "/backend/portal/home";
+       // redirectOnSuccess = "/backend/portal/home";
         redirectOnFail = "/backend/login";
         System.out.println("CallBack Servlet");
         try {
