@@ -1,0 +1,36 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /backend
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+    com.Illia.auth0: DEBUG
+    com.Illia.controller: DEBUG
+    com.auth0: TRACE
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: J0mSenHGFpmVN3EOEtazV6DfuxtoVnn9
+            client-secret: _6I2kWsGygZwx92kKKehpn1FSvJ4wz4PypN86OQ0axol5AZMDyBuCsU5iC0AXxUM
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"  # Spring формирует callback сюда
+            scope:
+              - openid
+              - profile
+              - email
+            client-name: Auth0
+        provider:
+          auth0:
+            issuer-uri: https://dev-j28fczur53zlmkj8.us.auth0.com/
+
+# Можно добавить, если используете шаблоны или thymeleaf
+spring:
+  thymeleaf:
+    cache: false

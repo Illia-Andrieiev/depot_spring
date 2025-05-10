@@ -1,0 +1,41 @@
+[33mcommit c8144f3efc8de8600e17b8db731bdbae902d2e43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Mon Apr 7 10:50:52 2025 +0300
+
+    backend v1.0
+
+[33mcommit 0c6e702f4c495484cabf7739248f4062c0443f8e[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Wed Apr 2 15:59:35 2025 +0300
+
+    test backend-frontend interaction
+
+[33mcommit ac1eba0382ccab5b39b178238ead4a99928a8982[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Sun Mar 30 19:16:39 2025 +0300
+
+    create autentification
+
+[33mcommit 60d49a5aa7c2439a299e2f482c677dd32f78f6c7[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Fri Mar 28 22:19:29 2025 +0200
+
+    Login redirect
+
+[33mcommit 99e54470b8d5ba66e7b51f9ad865786e2a442065[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Fri Mar 28 19:02:02 2025 +0200
+
+    auth try1
+
+[33mcommit 487c70e87d73b8775c9d912908135e5808a87793[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Fri Mar 28 14:27:16 2025 +0200
+
+    fix bugs
+
+[33mcommit 126251a9dbb97a3a333b13476f46ccd259b19ac7[m
+Author: Illia Andrieiev <i.e.andreev2005@gmail.com>
+Date:   Fri Mar 28 00:50:39 2025 +0200
+
+    init

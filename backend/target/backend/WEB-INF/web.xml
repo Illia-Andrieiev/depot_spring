@@ -1,11 +1,9 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd"
-         version="4.0">
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
 
     <display-name>Auth0 Web Application</display-name>
 
@@ -22,36 +20,16 @@
 
     <context-param>
         <param-name>com.auth0.clientId</param-name>
-        <param-value>S17XOw90QEFbsQ3OnSMOM5vrs8dsw82P</param-value>
+        <param-value>J0mSenHGFpmVN3EOEtazV6DfuxtoVnn9</param-value>
     </context-param>
 
     <context-param>
         <param-name>com.auth0.clientSecret</param-name>
-        <param-value>Bw8wpzScBojYKa1pSVT6NmWYZTtH_bIZp0Jgty_B9oOWYFE1RrY8pIo2t4PVF1c8</param-value>
+        <param-value>_6I2kWsGygZwx92kKKehpn1FSvJ4wz4PypN86OQ0axol5AZMDyBuCsU5iC0AXxUM</param-value>
     </context-param>
 
-    <!-- Фильтр аутентификации -->
 
-    <filter>
-        <filter-name>Auth0Filter</filter-name>
-        <filter-class>com.Illia.filters.Auth0Filter</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>Auth0Filter</filter-name>
-        <url-pattern>/index.jsp</url-pattern>
-        <!--<url-pattern></url-pattern>-->
-    </filter-mapping>
-    <filter>
-        <filter-name>CorsFilter</filter-name>
-        <filter-class>com.Illia.filters.CorsFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>CorsFilter</filter-name>
-        <url-pattern>/api/*</url-pattern>
-    </filter-mapping>
-
-
+    <!-- Servlet для аутентификации -->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.Illia.controller.LoginServlet</servlet-class>
@@ -60,6 +38,8 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet для профиля -->
     <servlet>
         <servlet-name>ProfileController</servlet-name>
         <servlet-class>com.Illia.controller.ProfileController</servlet-class>
@@ -68,7 +48,9 @@
         <servlet-name>ProfileController</servlet-name>
         <url-pattern>/api/profile</url-pattern>
     </servlet-mapping>
-        <servlet>
+
+    <!-- Servlet для запроса -->
+    <servlet>
         <servlet-name>QueryController</servlet-name>
         <servlet-class>com.Illia.controller.QueryController</servlet-class>
     </servlet>
@@ -76,7 +58,9 @@
         <servlet-name>QueryController</servlet-name>
         <url-pattern>/api/query</url-pattern>
     </servlet-mapping>
-      <servlet>
+
+    <!-- Servlet для диспетчера -->
+    <servlet>
         <servlet-name>DispatcherController</servlet-name>
         <servlet-class>com.Illia.controller.DispatcherController</servlet-class>
     </servlet>
@@ -84,7 +68,19 @@
         <servlet-name>DispatcherController</servlet-name>
         <url-pattern>/api/dispatcher</url-pattern>
     </servlet-mapping>
-      <servlet>
+
+    <!-- Servlet для доступа к диспетчеру -->
+    <servlet>
+        <servlet-name>DispatcherAccessController</servlet-name>
+        <servlet-class>com.Illia.controller.DispatcherAccessController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherAccessController</servlet-name>
+        <url-pattern>/api/dispatcher/access</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet для водителя и автомобиля -->
+    <servlet>
         <servlet-name>DriverCarController</servlet-name>
         <servlet-class>com.Illia.controller.DriverCarController</servlet-class>
     </servlet>
@@ -92,7 +88,9 @@
         <servlet-name>DriverCarController</servlet-name>
         <url-pattern>/api/driver</url-pattern>
     </servlet-mapping>
-      <servlet>
+
+    <!-- Servlet для поездки -->
+    <servlet>
         <servlet-name>TripController</servlet-name>
         <servlet-class>com.Illia.controller.TripController</servlet-class>
     </servlet>
@@ -100,44 +98,45 @@
         <servlet-name>TripController</servlet-name>
         <url-pattern>/api/trip</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet для обратного вызова -->
     <servlet>
         <servlet-name>CallbackServlet</servlet-name>
         <servlet-class>com.Illia.controller.CallbackServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>CallbackServlet</servlet-name>
         <url-pattern>/callback</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet для назначения водителя -->
     <servlet>
         <servlet-name>DriverAssignController</servlet-name>
         <servlet-class>com.Illia.controller.DriverAssignController</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>DriverAssignController</servlet-name>
         <url-pattern>/api/query/driver</url-pattern>
     </servlet-mapping>
-    
+
+    <!-- Servlet для выхода -->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.Illia.controller.LogoutServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet для главной страницы -->
     <servlet>
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>com.Illia.controller.HomeServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/portal/home</url-pattern>
     </servlet-mapping>
 
 </web-app>
-
-
