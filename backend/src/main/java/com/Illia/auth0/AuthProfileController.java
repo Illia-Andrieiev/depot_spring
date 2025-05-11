@@ -19,7 +19,7 @@ import java.util.Map;
  * {@linkplain OidcUser} for use by the view.
  */
 @Controller
-public class ProfileController {
+public class AuthProfileController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     private final static ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());

@@ -10,6 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class DriverCarDAO {
     private static final String GET_PROFILE_QUERY = "SELECT * FROM driver JOIN car ON car.vin = driver.car_vin WHERE driver.email = ?";
 

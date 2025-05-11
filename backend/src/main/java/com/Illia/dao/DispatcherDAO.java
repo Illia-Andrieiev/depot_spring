@@ -7,6 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class DispatcherDAO {
     private static final String GET_UUID_QUERY = "SELECT id FROM dispatcher WHERE email = ?";
 

@@ -9,6 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ProfileDAO {
     private static final String GET_PROFILE_QUERY = "SELECT * FROM profile WHERE email = ?";
     private static final String INSERT_PROFILE_QUERY = "INSERT INTO profile (email, address, phone, birth_day, birth_month, birth_year, first_name, last_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

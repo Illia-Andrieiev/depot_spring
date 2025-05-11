@@ -2,16 +2,17 @@ package com.Illia.dao;
 
 
 import com.Illia.config.DatabaseConfig;
-import com.Illia.dto.ProfileDTO;
 import com.Illia.dto.QueryDTO;
 
-import java.security.Timestamp;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class QueryDAO {
     private static final String GET_QUERY_BY_EMAIL = "SELECT * FROM driver_query WHERE email = ?";
     private static final String GET_NEW_QUERY = "SELECT * FROM driver_query WHERE status='new'";

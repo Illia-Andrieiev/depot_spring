@@ -5,7 +5,7 @@ import com.Illia.config.DatabaseConfig;
 import com.Illia.dto.QueryDTO;
 import com.Illia.dto.TripDTO;
 
-import java.security.Timestamp;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,15 +15,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class TripDAO {
-    private static final String GET_QUERY_BY_EMAIL = "SELECT * FROM driver_query WHERE email = ?";
-    private static final String GET_NEW_QUERY = "SELECT * FROM driver_query WHERE status='new'";
+
     private static final String GET_QUERY_BY_ID = "SELECT * FROM driver_query WHERE id = ? AND (status ='new' or status ='expired')";
-    private static final String INSERT_QUERY = "INSERT INTO driver_query (add_datetime, start_datetime, email, start_location, destination, driver_experience, car_type, max_car_mileage, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
-    private static final String UPDATE_QUERY = "UPDATE driver_query SET add_datetime = ?, start_datetime = ?, email = ?, start_location = ?, destination = ?, driver_experience = ?, car_type = ?, max_car_mileage = ?, status = ? WHERE id = ?";
-    private static final String DELETE_QUERY = "DELETE FROM driver_query WHERE id = ? AND (status ='new' or status ='expired')";
-    private static final String UPDATE_QUERY_STATUS = "UPDATE driver_query SET status = ? WHERE id = ?";
+
 
 
     public void createTrip(int queryId, String dispatcherEmail, int driverId) {
@@ -47,7 +45,7 @@ public class TripDAO {
                 System.out.println("Trying to receive query [" + queryId + "]");
                 QueryDTO queryTrip = null;
                  if (rs.next()) {
-                    queryTrip = new QueryDTO(
+                        queryTrip = new QueryDTO(
                         rs.getInt("id"),                          // id should be an integer
                         rs.getTimestamp("add_datetime").toLocalDateTime(), // add_datetime as LocalDateTime
                         rs.getTimestamp("start_datetime").toLocalDateTime(), // start_datetime as LocalDateTime

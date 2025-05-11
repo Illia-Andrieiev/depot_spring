@@ -1,9 +1,6 @@
 package com.Illia.auth0;
 
-import jakarta.servlet.ServletException;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,14 +13,11 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import com.Illia.Application;
-
 import java.util.Arrays;
 import java.util.List;
 
 @Configuration
 public class SecurityConfig {
-    private static final Logger logger = LogManager.getLogger(Application.class);
     @Value("${spring.security.oauth2.client.registration.auth0.client-id}")
     private String clientId;
 
