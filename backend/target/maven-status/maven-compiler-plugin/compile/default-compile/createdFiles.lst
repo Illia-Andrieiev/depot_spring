@@ -1,8 +1,11 @@
+com\Illia\controller\DriverAssignController.class
 com\Illia\auth0\SecurityConfig.class
 com\Illia\config\DatabaseConfig.class
 com\Illia\dao\TripDAO.class
+com\Illia\auth0\UserInfoController.class
 com\Illia\dto\DispatcherDTO.class
 com\Illia\dao\DriverCarDAO.class
+com\Illia\controller\TripController.class
 com\Illia\dao\ProfileDAO.class
 com\Illia\dao\QueryDAO.class
 com\Illia\dto\DriverCarDTO.class
@@ -11,5 +14,9 @@ com\Illia\dao\DispatcherDAO.class
 com\Illia\config\WebConfig.class
 com\Illia\dto\ProfileDTO.class
 com\Illia\dto\TripDTO.class
+com\Illia\controller\QueryController.class
 com\Illia\Application.class
 com\Illia\auth0\HomeController.class
+com\Illia\auth0\AuthProfileController.class
+com\Illia\controller\DriverCarController.class
+com\Illia\controller\ProfileController.class

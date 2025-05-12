@@ -1,0 +1,58 @@
+.Main-div {
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  gap: 10px;
+}
+
+
+.Center-table-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Right-buttons-div {
+  align-self: start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:fit-content;
+  height:fit-content;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-right: 1.5vh;
+  margin-left: auto;
+  margin-top: 1.5vh;
+  gap: 1.5vh;
+  }
+  .Left-buttons-div {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:fit-content;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin-right: auto;
+    margin-left: 1.5vh;
+    margin-top: 1.5vh;
+    gap: 1.5vh;
+  }
+  .buttons{
+    padding:1.5vh;
+    border-radius:4%;
+    border-color:#d2a100;
+    background-color:#DBA901;
+    color:white;
+    width:100%;
+}
+.buttons:hover {
+    background-color: #d2c501; 
+    transform: scale(1.05);  
+}
+.buttons:active {
+    background-color: #c89c01; 
+    transform: scale(0.95);  
+}

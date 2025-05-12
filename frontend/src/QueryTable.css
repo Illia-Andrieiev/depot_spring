@@ -1,0 +1,18 @@
+
+.center-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .center-table caption{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 120%;
+    font-weight: 700;
+  }
+  .center-table th,
+  .center-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }

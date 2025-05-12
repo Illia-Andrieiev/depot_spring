@@ -29,8 +29,3 @@ spring:
         provider:
           auth0:
             issuer-uri: https://dev-j28fczur53zlmkj8.us.auth0.com/
-
-# Можно добавить, если используете шаблоны или thymeleaf
-spring:
-  thymeleaf:
-    cache: false

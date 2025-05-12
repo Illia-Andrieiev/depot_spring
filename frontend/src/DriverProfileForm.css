@@ -1,0 +1,64 @@
+.Driver-profile-form {
+    width: 80%;
+    margin: auto;
+    padding: 2vh;
+    border: 1px solid #d2a100;
+    border-radius: 4%;
+    background-color: #fffaf0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 50vh;
+    margin-top: 2vh;
+  }
+  
+.Driver-profile-form label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 1vh;
+    color: #DBA901;
+  }
+  
+.Driver-profile-form input[type="text"],
+.Driver-profile-form input[type="tel"],
+.Driver-profile-form select,
+Driver-profile-form textarea {
+    width: calc(100% - 20px);
+    padding: 1vh;
+    margin-bottom: 2vh;
+    border: 1px solid #d2a100;
+    border-radius: 4%;
+    background-color: #fff;
+    font-size: 1em;
+    color: #333;
+    outline: none;
+  }
+  
+.Driver-profile-form input[type="text"]:focus,
+.Driver-profile-form input[type="tel"]:focus,
+.Driver-profile-form select:focus {
+    border-color: #DBA901;
+    box-shadow: 0 0 5px #DBA901;
+    width: calc(100% - 20px);
+  }
+  
+.Driver-profile-form button {
+    padding: 1.5vh;
+    border: none;
+    border-radius: 4%;
+    background-color: #DBA901;
+    color: white;
+    font-size: 1.2em;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+.Driver-profile-form button:hover {
+    background-color: #d2c501;
+  }
+  
+.Driver-profile-form button:active {
+    background-color: #c89c01;
+    transform: scale(0.95);
+  }
